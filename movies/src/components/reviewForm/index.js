@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
@@ -35,14 +34,6 @@ const ratings = [
   },
 ];
 
-  const [open, setOpen] = useState(false); 
-  const navigate = useNavigate();
-
-  const handleSnackClose = (event) => {
-    setOpen(false);
-    navigate("/movies/favorites");
-  };
-
 const styles = {
   root: {
     marginTop: 2,
@@ -73,6 +64,13 @@ const styles = {
 const ReviewForm = ({ movie }) => {
   const context = useContext(MoviesContext);
   const [rating, setRating] = useState(3);
+  const [open, setOpen] = useState(false); 
+  const navigate = useNavigate();
+
+  const handleSnackClose = (event) => {
+    setOpen(false);
+    navigate("/movies/favorites");
+  };
   
   const defaultValues = {
     author: "",
